@@ -50,19 +50,19 @@ cd Sarcasm-Detection-With-Machine-Learning
 pip install -r requirements.txt
 ```
 
-===
+---
 
-🧠 Model Architecture
+## 🧠 Model Architecture
 
-Tokenizer: Pretrained BERT tokenizer
-Model: BERT base model with classification head
-Library: HuggingFace Transformers + PyTorch
-Metrics: Accuracy, F1-Score, Confusion Matrix
+- **Tokenizer**: Pretrained BERT tokenizer
+- **Model**: BERT base model with classification head
+- **Library**: HuggingFace Transformers + PyTorch
+- **Metrics**: Accuracy, F1-Score, Confusion Matrix
 
-===
+---
 
-📊 Results
+## 📊 Results
 
-Accuracy: ~87%
-F1 Score: ~86.4%
-Confusion matrix and loss curves are available in the notebook.
+- **Accuracy**: ~87%
+- **F1 Score**: ~86.4%
+- Confusion matrix and loss curves are available in the notebook.
