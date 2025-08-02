@@ -1,0 +1,173 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sarcasm Detector</title>
+    <style>
+        body { font-family: Arial; margin: 50px; background-color: #f4f4f4; }
+        textarea { width: 100%; height: 100px; }
+        .btn { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>🧠 Sarcasm Detector</h1>
+    <form method="POST">
+        <textarea name="input_text" placeholder="Type your sentence here..." required></textarea><br><br>
+        <input class="btn" type="submit" value="Detect Sarcasm">
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            <strong>Prediction:</strong> {{ prediction }} <br>
+            <strong>Confidence:</strong> {{ confidence }}%
+        </div>
+    {% endif %}
+</body>
+</html> -->
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sarcasm Detector</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        button {
+            background: #1a73e8;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #1557b0;
+        }
+        
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .sarcastic {
+            background: #ffebee;
+            color: #c62828;
+            border: 2px solid #ef9a9a;
+        }
+        
+        .not-sarcastic {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #a5d6a7;
+        }
+        
+        .prediction-text {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤔 Sarcasm Detector</h1>
+        
+        <form method="POST">
+            <div class="form-group">
+                <textarea name="headline" placeholder="Enter a headline to check for sarcasm..." required>{% if text %}{{ text }}{% endif %}</textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Check for Sarcasm</button>
+            </div>
+        </form>
+
+        {% if prediction %}
+        <div class="result {% if 'Not' in prediction %}not-sarcastic{% else %}sarcastic{% endif %}">
+            <div class="prediction-text">{{ prediction }}</div>
+            <div>
+                {% if 'Not' in prediction %}
+                    😊 Genuine Content Detected
+                {% else %}
+                    🎭 Sarcasm Detected!
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sarcasm Detector</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f5f5f5; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        textarea { width: 100%; padding: 10px; margin: 10px 0; border: 2px solid #ddd; border-radius: 5px; }
+        button { background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .sarcastic { background: #ffebee; border: 2px solid #ff5252; }
+        .not-sarcastic { background: #e8f5e9; border: 2px solid #4caf50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Sarcasm Detector</h1>
+        
+        <form method="POST">
+            <textarea name="headline" placeholder="Enter text to check for sarcasm..." rows="4"></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result {% if 'Sarcastic' in prediction %}sarcastic{% else %}not-sarcastic{% endif %}">
+            {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

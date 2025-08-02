@@ -1,0 +1,8 @@
+pandas
+numpy
+nltk
+sklearn
+plotly
+transformers
+torch
+flask
